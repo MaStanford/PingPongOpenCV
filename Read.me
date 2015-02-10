@@ -1,0 +1,48 @@
+Installation for Mac OS
+
+-Install python
+    brew update
+    brew install python
+
+-Install pip
+    brew install wget
+    wget https://bootstrap.pypa.io/get-pip.py
+    python get-pip.py
+
+-Install numpy
+    pip install numpy
+
+-Install opencv
+
+    Download the openCV package:
+        http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.10/opencv-2.4.10.zip/download
+
+    cd ~/Downloads/opencv-2.4.10
+
+    setup cmake
+        cmake -DCMAKE_C_COMPILER=gcc
+        cd /
+        sudo ln -s /Applications/Xcode.app/Contents/Developer Developer
+        cd ~/Downloads/opencv-2.4.10
+
+    cmake ./
+
+    make -j8
+
+    sudo make install
+
+    update the pythonpath variable
+         export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+
+    If using pycharm you need to update the path in pycharm
+        Run -> Edit Configurations -> Python -> Environment Variables -> Key: PYTHONPATH Value: /usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+Check install
+    python
+    import cv2
+    import numpy
+    exit()
+
+    If no error then you are good.
+    If errors, then debug with google.
+
